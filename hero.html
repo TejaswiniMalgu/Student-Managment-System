@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .full-screen {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 60px 20px;
+        }
+       /* Fixed glass header */
+        #header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1030;
+            opacity: 0.9;
+            background-color: rgba(132, 130, 192, 0.45);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        /* prevent content from hiding under the fixed header */
+        body { padding-top: 80px; }
+
+        @media (max-width: 576px) {
+            body { padding-top: 72px; }
+            #header .navbar-brand img { width: 48px; height: 48px; }
+        }
+
+        /* offset anchor targets so headings remain visible under fixed header */
+        section[id], .full-screen { scroll-margin-top: 90px; }
+        #home { background: linear-gradient( #eaeaee, #3a75e4); }
+        #courses { background: linear-gradient(#eaeaee, #753ae4); flex-direction: column; justify-content: flex-start; }
+         #about { background: linear-gradient( #eaeaee, #e43ae4); }
+          #features { background: linear-gradient( #eaeaee, #e43a6d); }
+          #contact { background: linear-gradient( #eaeaee, #e43a3a); }
+         #login { background: linear-gradient( #eaeaee, #8ce43a); }
+        #courses h1 {
+            color: #ffffff;
+            margin-bottom: 40px;
+        }
+        #home .hero-content {
+            text-align: center;
+            padding: 40px;
+            margin: 40px;
+            color: white;
+        }
+        #home h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        #home p {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <nav class="navbar navbar-expand-lg" style="background-color: #b0b0cc;">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="navbar-brand text-light fw-bold d-flex align-items-center" href="index.html">
+                <img src="cvr.png" alt="logo" width="60" height="60" class="me-2">
+                Student Management System
+            </a>
+
+            <div class="d-flex gap-3">
+                <a href="#home" class="btn btn-outline-light">Home</a>
+                <a href="#about" class="btn btn-outline-light">About</a>
+                <a href="#features" class="btn btn-outline-light">Features</a>
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Courses
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#courses">Computer Science</a></li>
+                        <li><a class="dropdown-item" href="#courses">Electrical Engineering</a></li>
+                        <li><a class="dropdown-item" href="#courses">Mechanical Engineering</a></li>
+                    </ul>
+                </div>
+                <a href="#contact" class="btn btn-outline-light">Contact</a>
+                <a href="#login" class="btn btn-success">Login</a>
+            </div>
+
+        </div>
+        </nav>
+    </div>
+
+    <div id="home" class="full-screen">
+        <div class="hero-content">
+            <h1>Welcome to CVR College of Engineering</h1>
+            <p>Empowering Students for a Brighter Future</p>
+            <a href="registration.html" class="btn btn-success btn-lg  btn-outline-light">Register Now</a>
+        </div>
+    </div>
+
+    <section id="about" class="full-screen">
+        <div class="container text-center text-dark">
+            <h2 class="display-4">About Us</h2>
+            <p class="lead">CVR College of Engineering is dedicated to academic excellence and student success. We offer a supportive environment and modern facilities to help students thrive.</p>
+        </div>
+    </section>
+
+    <section id="features" class="full-screen">
+        <div class="container text-center text-dark">
+            <h2 class="display-4">Our Features</h2>
+            <p class="lead">Discover the features that make our student management system exceptional.</p>
+            <div class="container">
+            <div class="row justify-content-center g-4">
+                <div class="col-md-6 col-lg-4 col-sm-12">
+                    <div class="card h-100">
+                        <img src="card-1.jpg" alt="Card 1" class="card-img-top" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Student Registration</h5>
+                            <p class="card-text">Manage student information and registrations.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-sm-12">
+                    <div class="card h-100">
+                        <img src="card-2.jpg" alt="Card 2" class="card-img-top" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Attendance Management</h5>
+                            <p class="card-text">Manage student attendance records.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-sm-12">
+                    <div class="card h-100">
+                        <img src="card-3.jpg" alt="Card 3" class="card-img-top" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Result Management</h5>
+                            <p class="card-text">Manage student results and grades.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section id="courses" class="full-screen">
+        <h2 class="display-4 text-center">Our Courses</h2>
+        <div class="container py-4">
+            <div class="row justify-content-center g-4">
+                <div class="col-md-6 col-lg-4 col-sm-12">
+                    <div class="card h-100">
+                        <img src="card-1.jpg" alt="Card 1" class="card-img-top" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Computer Science</h5>
+                            <p class="card-text">B.Tech in Computer Science and Engineering.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-sm-12">
+                    <div class="card h-100">
+                        <img src="card-2.jpg" alt="Card 2" class="card-img-top" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Electrical Engineering</h5>
+                            <p class="card-text">B.Tech in Electrical Engineering.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-sm-12">
+                    <div class="card h-100">
+                        <img src="card-3.jpg" alt="Card 3" class="card-img-top" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Mechanical Engineering</h5>
+                            <p class="card-text">B.Tech in Mechanical Engineering.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="full-screen">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h2 class="text-center mb-4">Contact Us</h2>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control" placeholder="Your name">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="you@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" rows="4"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-primary">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="login" class="full-screen">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h2 class="text-center mb-4">Login</h2>
+                    <form action="registration.html">
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="you@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-success">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+        <div id="footer-sec">
+            <div class="container-fluid text-center text-light py-4 bg-dark">
+                <a href="#" class="btn btn-outline-light">LinkedIn</a>
+                <a href="#" class="btn btn-outline-light">Mail</a> 
+                <p>&copy; 2024 CVR College of Engineering. All rights reserved.</p>
+                
+            </div>
+
+        </div>
+    
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
